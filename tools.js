@@ -39,7 +39,7 @@ function oauthSignIn() {
 
   // Parameters to pass to OAuth 2.0 endpoint.
   var params = {'client_id': '751102573687-lq0v4ovs4lh8jk9vtrvn5cg382p2krr7.apps.googleusercontent.com',
-                'redirect_uri': 'https://blackjack.friedcow.repl.co/',
+                'redirect_uri': location.href,
                 'response_type': 'token',
                 'scope': 'https://www.googleapis.com/auth/userinfo.profile',
                 'include_granted_scopes': 'true',
