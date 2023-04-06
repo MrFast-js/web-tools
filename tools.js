@@ -1,7 +1,8 @@
-function $(thing) {
+export function $(thing) {
   if(thing.includes("#")) return document.querySelectorAll(thing)[0]
   return document.querySelectorAll(thing)
 }
+console.log("loaded")
 window.onload= ()=>{
   alert('loaded webtools')
   $('googleSignInButton').innerHTML = `<div id="googleSignIn" class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" data-width="200px"
