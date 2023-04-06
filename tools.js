@@ -3,6 +3,13 @@ function $(thing) {
   return document.querySelectorAll(thing)
 }
 console.log("loaded")
+async function getJson(url) {
+  var json = await(await fetch(url)).json();
+  return json;
+}
+function randInt(min,max) {
+  return Math.floor(Math.random() * (max - min + 1) + min)
+}
 window.onload= ()=>{
   alert('loaded webtools')
   $('googleSignInButton').innerHTML = `<div id="googleSignIn" class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" data-width="200px"
