@@ -21,7 +21,6 @@ function randInt(min,max) {
   return Math.floor(Math.random() * (max - min + 1) + min)
 }
 setTimeout(()=>{
-  alert('loaded webtools')
   var buttons = $('.googleSignInButton');
   for(var button of buttons) {
   button.innerHTML = `<div id="googleSignIn" class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" data-width="200px"
