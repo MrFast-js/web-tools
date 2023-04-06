@@ -3,6 +3,7 @@ function $(thing) {
   return document.querySelectorAll(thing)
 }
 window.onload= ()=>{
+  alert('loaded webtools')
   $('googleSignInButton').innerHTML = `<div id="googleSignIn" class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" data-width="200px"
     data-gapiscan="true" data-onload="true" style="visibility: visible;">
     <div style="height:36px;width:200px;" class="abcRioButton abcRioButtonBlue">
