@@ -1,5 +1,5 @@
 function $(thing) {
-  if(thing.includes("#")) return document.querySelectorAll(thing)[0]
+  if(thing.includes("#")) return document.getElementById(thing.replaceAll('#',''))
   return document.querySelectorAll(thing)
 }
 function hide(element) {
