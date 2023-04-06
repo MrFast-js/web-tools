@@ -58,4 +58,31 @@ function oauthSignIn() {
   document.body.appendChild(form);
   form.submit();
 }
-
+var shorts = ["","K","M","B","T","Q","Qi","Sext","Sept","Oct","Non","Deci"]
+function shortenNumber(n) {
+  var digits = (toPlainString(n+"").length)-1;
+  
+  var index = Math.floor((digits%3)/3+Math.floor(digits/3));
+  var total = 1;
+  for(var i=0;i<index;i++) {
+    total*=1000
+  }
+  var short = Math.floor((n/total)*10)/10;
+  if(index-1>=shorts.length) {
+    var difference = Math.abs(shorts.length-index);
+    for(var i=0;i<difference;i++) {
+      short*=10;
+    }
+    return short+" "+shorts[shorts.length-1]
+  }
+  if(index==0) return short;
+  return short+" "+shorts[index];
+}
+function toPlainString(num) {
+  return (''+ +num).replace(/(-?)(\d*)\.?(\d*)e([+-]\d+)/,
+    function(a,b,c,d,e) {
+      return e < 0
+        ? b + '0.' + Array(1-e-c.length).join(0) + c + d
+        : b + c + d + Array(e-d.length+1).join(0);
+    });
+}
