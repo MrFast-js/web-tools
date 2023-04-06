@@ -8,7 +8,7 @@ function hide(element) {
 function show(element) {
   element.style = 'visibility: visible;'
 }
-console.log("loaded")
+console.log("loaded webtools")
 async function getJson(url) {
   var json = await(await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(url)}`)).json();
   return json;
