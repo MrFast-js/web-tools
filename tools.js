@@ -1,4 +1,4 @@
-export function $(thing) {
+function $(thing) {
   if(thing.includes("#")) return document.querySelectorAll(thing)[0]
   return document.querySelectorAll(thing)
 }
