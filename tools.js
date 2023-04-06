@@ -2,6 +2,12 @@ function $(thing) {
   if(thing.includes("#")) return document.querySelectorAll(thing)[0]
   return document.querySelectorAll(thing)
 }
+function hide(element) {
+  element.style = 'visibility: hidden;'
+}
+function show(element) {
+  element.style = 'visibility: visible;'
+}
 console.log("loaded")
 async function getJson(url) {
   var json = await(await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(url)}`)).json();
@@ -14,7 +20,7 @@ async function getText(url) {
 function randInt(min,max) {
   return Math.floor(Math.random() * (max - min + 1) + min)
 }
-window.onload= ()=>{
+setTimeout(()=>{
   alert('loaded webtools')
   $('googleSignInButton').innerHTML = `<div id="googleSignIn" class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" data-width="200px"
     data-gapiscan="true" data-onload="true" style="visibility: visible;">
@@ -45,4 +51,4 @@ window.onload= ()=>{
       </div>
     </div>
   </div>`
-}
+},300)
