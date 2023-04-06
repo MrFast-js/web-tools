@@ -7,6 +7,10 @@ async function getJson(url) {
   var json = await(await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(url)}`)).json();
   return json;
 }
+async function getText(url) {
+  var json = await(await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(url)}`));
+  return json;
+}
 function randInt(min,max) {
   return Math.floor(Math.random() * (max - min + 1) + min)
 }
