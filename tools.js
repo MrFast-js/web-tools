@@ -4,7 +4,7 @@ function $(thing) {
 }
 console.log("loaded")
 async function getJson(url) {
-  var json = await(await fetch(url)).json();
+  var json = await(await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(url)}`)).json();
   return json;
 }
 function randInt(min,max) {
